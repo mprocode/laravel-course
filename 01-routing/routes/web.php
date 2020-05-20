@@ -27,3 +27,8 @@ Route::get('name/{firstname}/{lastname?}', function($firstname, $lastname=null) 
     return "Hello, $firstname!";
 });
 
+Route::get('/rules/{name}/{n}', function($name, $n) {
+    for($i=0; $i<$n; $i++) {
+        echo "Hi! Welcome $name! <br>";
+    }
+})->where('name', '[A-Za-z]+')->where('n', '[0-9]+');
