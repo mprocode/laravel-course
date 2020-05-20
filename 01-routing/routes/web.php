@@ -14,5 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return '<h1>welcome</h1>';
 });
+
+Route::get('hello/{firstname}/{lastname}', function($firstname, $lastname) {
+    return "Hello, $firstname $lastname!";
+});
+
+Route::get('name/{firstname}/{lastname?}', function($firstname, $lastname=null) {
+    if(isset($lastname))
+        return "Hello, $firstname $lastname!";
+    return "Hello, $firstname!";
+});
+
