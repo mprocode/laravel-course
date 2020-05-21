@@ -61,5 +61,12 @@ Route::get('/products', function() {
     echo "</ol>";
 })->name('products');
 
+Route::redirect('products1', 'products', 301);
 
+Route::get('products2', function() {
+    return redirect('/products'); // by route
+});
 
+Route::get('products3', function() {
+    return redirect()->route('products'); // by route name
+});
