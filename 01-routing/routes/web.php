@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,4 +70,32 @@ Route::get('products2', function() {
 
 Route::get('products3', function() {
     return redirect()->route('products'); // by route name
+});
+
+Route::post('/http_requests', function(Request $request) {
+    return 'Hello POST';
+});
+
+Route::delete('/http_requests', function(Request $request) {
+    return 'Hello DELETE';
+});
+
+Route::put('/http_requests', function(Request $request) {
+    return 'Hello PUT';
+});
+
+Route::patch('/http_requests', function(Request $request) {
+    return 'Hello PATCH';
+});
+
+Route::options('/http_requests', function(Request $request) {
+    return 'Hello OPTIONS';
+});
+
+Route::get('/http_requests', function(Request $request) {
+    return 'Hello GET';
+});
+
+Route::post('/http_requests/{param}', function(Request $request, $param) {
+    return "Hello POST - Param: $param";
 });
