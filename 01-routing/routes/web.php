@@ -38,18 +38,28 @@ Route::prefix('/app')->group(function() {
 
     Route::get('/', function() {
         return view('app');
-    });
+    })->name('app.index');
 
     Route::get('/user', function() {
         return view('user');
-    });
+    })->name('app.user');
 
     Route::get('/profile', function() {
         return view('profile');
-    });
+    })->name('app.profile');
 
 
 });
+
+Route::get('/products', function() {
+    echo "<h1>Products</h1>";
+    echo "<ol>";
+    echo "<li>Notebook</li>";
+    echo "<li>Printer</li>";
+    echo "<li>Mouse</li>";
+    echo "<li>Keyboard</li>";
+    echo "</ol>";
+})->name('products');
 
 
 
