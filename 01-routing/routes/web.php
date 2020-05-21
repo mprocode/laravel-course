@@ -32,3 +32,24 @@ Route::get('/rules/{name}/{n}', function($name, $n) {
         echo "Hi! Welcome $name! <br>";
     }
 })->where('name', '[A-Za-z]+')->where('n', '[0-9]+');
+
+Route::prefix('/app')->group(function() {
+
+
+    Route::get('/', function() {
+        return view('app');
+    });
+
+    Route::get('/user', function() {
+        return view('user');
+    });
+
+    Route::get('/profile', function() {
+        return view('profile');
+    });
+
+
+});
+
+
+
