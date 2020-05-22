@@ -18,3 +18,7 @@ Route::get('/', 'FirstController@products');
 Route::get('/products', 'FirstController@productsView');
 
 Route::get('/products_params', 'FirstController@productsViewParams');
+
+Route::get('products/info/{index?}', 
+    'FirstController@productsInfo'
+)->name('productInfo');

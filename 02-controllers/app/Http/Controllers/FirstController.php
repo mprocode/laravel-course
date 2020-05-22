@@ -34,4 +34,22 @@ class FirstController extends Controller
             'title' => 'Report - All Products'
         ]);
     }
+
+    public function productsInfo($index = null)
+    {
+        $products= [
+            ['id'=> 1, 'name'=>'Notebook', 'description' => "A short description about the Notebook" ], 
+            ['id'=> 2, 'name'=>'Printer', 'description' => "A short description about the Printer" ], 
+            ['id'=> 3, 'name'=>'Mouse', 'description' => "A short description about the Mouse" ], 
+            ['id'=> 4, 'name'=>'Keyboard', 'description' => "A short description about the Keyboard" ], 
+        ];
+        $title = 'Report - All Products';
+        
+        $selected =  ($index != null && $index<count($products)) ? 
+            $products[ $index ] : null;
+
+        return view('products_info', 
+            compact(['products', 'title', 'selected']));
+    }
+
 }
