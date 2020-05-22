@@ -61,9 +61,7 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        $clients = session('clients', $this->clients);
-        $index = $this->getIndex($id, $clients);
-        $client = $clients [ $index ];
+        $client = $this->getClientByID($id);
         return view('clients.info', compact(['client']));
     }
 
@@ -75,7 +73,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = $this->getClientByID($id);
+        return view('clients.edit', compact(['client']));
     }
 
     /**
@@ -87,7 +86,14 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $clients = session('clients', $this->clients);
+        $index = $this->getIndex($id, $clients);
+        if (false !== $index) {
+            $clients[ $index ]['name'] = $request->name;
+        }
+        session(['clients' => $clients]);
+
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -108,5 +114,14 @@ class ClientController extends Controller
         $ids = array_column($clients, 'id');
         $index = array_search($id, $ids);
         return $index;
+    }
+
+    // Return the client by id
+    private function getClientByID($id) 
+    {
+        $clients = session('clients', $this->clients);
+        $index = $this->getIndex($id, $clients);
+        $client = ($index !== false) ? $clients [ $index ] : null;
+        return $client;        
     }
 }
