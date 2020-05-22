@@ -1,0 +1,3 @@
+# Generating Controllers
+php artisan make:controller FirstController
+
