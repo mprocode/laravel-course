@@ -49,7 +49,7 @@ class ClientController extends Controller
         $name = $request->name;
         $clients[] = compact(['id','name']);
         session(['clients' => $clients]);
-        
+
         return redirect()->route('clients.index');
     }
 
@@ -61,7 +61,10 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        $clients = session('clients', $this->clients);
+        $index = $this->getIndex($id, $clients);
+        $client = $clients [ $index ];
+        return view('clients.info', compact(['client']));
     }
 
     /**
@@ -96,5 +99,14 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    // Map the index to related client
+    private function getIndex($id, $clients)
+    {
+        $ids = array_column($clients, 'id');
+        $index = array_search($id, $ids);
+        return $index;
     }
 }
