@@ -4,7 +4,7 @@
     @csrf
     @method('PATCH')
     <input type="text" name="name" value="{{ $client['name'] }}">
-    <input type="submit" value="Create">
+    <input type="submit" value="Update">
 </form>
 
 <a href="{{ route('clients.index') }}">Go Back</a>
