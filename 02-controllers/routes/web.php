@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FirstController@products');
 
 Route::get('/products', 'FirstController@productsView');
+
+Route::get('/products_params', 'FirstController@productsViewParams');
