@@ -22,3 +22,5 @@ Route::get('/products_params', 'FirstController@productsViewParams');
 Route::get('products/info/{index?}', 
     'FirstController@productsInfo'
 )->name('productInfo');
+
+Route::resource('clients', 'ClientController');

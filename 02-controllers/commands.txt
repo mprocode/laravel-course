@@ -1,3 +1,5 @@
 # Generating Controllers
 php artisan make:controller FirstController
 
+# Generating Controllers with resources
+php artisan make:controller ClientController --resource
