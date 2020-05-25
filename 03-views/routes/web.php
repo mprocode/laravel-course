@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/projects', 'GeneralController@projects');
 Route::get('/members', 'GeneralController@members');
+Route::get('/home', 'GeneralController@home');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use App\Models\Project;
+use App\Services\FakeChartService;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
 
@@ -50,5 +51,21 @@ class GeneralController extends Controller
         }
         // dd($members);
         return view('members', compact(['members']));
+    }
+
+    public function home()
+    {
+        $charts = [
+            FakeChartService::generateBarLineChart(),
+            FakeChartService::generateLinesChart(),
+            FakeChartService::generateRadarChart(),
+            FakeChartService::generateBarsCharttype1(3, 4),
+            FakeChartService::generateBarsCharttype1(8, 2),
+            FakeChartService::generateDoughnutChart(),
+            FakeChartService::generateBarsCharttype2(), 
+            FakeChartService::generateLinesChart(20), 
+            FakeChartService::generatePieChart(10)            
+        ];
+        return view('home', compact(['charts']));
     }
 }
