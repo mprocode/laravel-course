@@ -1,3 +1,10 @@
+@extends('layouts.main')
+
+@section("title", "Our Members")
+
+@section('content')
+
+
 <h1>Members</h1>
 <hr>
 
@@ -54,3 +61,5 @@
         @endforelse
     </tbody>
 </table>
+
+@endsection

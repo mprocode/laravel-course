@@ -1,3 +1,10 @@
+@extends('layouts.main')
+
+@section("title", "Our Projects")
+
+@section('content')
+
+
 <h1>Projects</h1>
 <hr>
 
@@ -101,3 +108,5 @@
         </div>
     @endforeach
 </div>
+
+@endsection

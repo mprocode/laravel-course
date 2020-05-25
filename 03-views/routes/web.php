@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', 'GeneralController@projects');
-Route::get('/members', 'GeneralController@members');
-Route::get('/home', 'GeneralController@home');
+Route::get('/projects', 'GeneralController@projects')
+    ->name('projects');
+Route::get('/members', 'GeneralController@members')
+    ->name('members');
+Route::get('/home', 'GeneralController@home')
+    ->name('home');
