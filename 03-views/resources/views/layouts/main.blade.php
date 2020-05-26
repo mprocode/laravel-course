@@ -22,6 +22,36 @@
         flex: 70%;
         padding: 10px;
     }
+
+    .menu ul {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+    }
+
+    .menu li { list-style: none; }
+
+    .menu a {
+        display: block;
+        width: 200px;
+        height: 20px;
+        color: black;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        text-align: center;
+        margin: 5px;
+        font-size: 18px;
+    }
+
+    .menu a:hover {
+        background-color: #b9bcd0;
+        color: #0000ff;
+        font-weight: bold;
+    }
+
+    .menu .active {
+        background-color: #c0d4f3;
+    }    
   </style>
 </head>
 <body>
@@ -29,9 +59,18 @@
         <div class="col1">
             <div class="menu">
                 <ul>
-                    <li><a href="{{ route('home')}}">Home</a></li>  
-                    <li><a href="{{ route('members')}}">Team Members</a></li>  
-                    <li><a href="{{ route('projects')}}">Our Projects</a></li>  
+                    <li>
+                        <a class=" {{  request()->routeIs('home') ? 'active' : '' }}  "
+                            href="{{ route('home')}}">Home</a>
+                    </li>  
+                    <li>
+                        <a class=" {{  request()->routeIs('members') ? 'active' : '' }}  "
+                            href="{{ route('members')}}">Team Members</a>
+                    </li>  
+                    <li>
+                        <a class=" {{  request()->routeIs('projects') ? 'active' : '' }}  "
+                            href="{{ route('projects')}}">Our Projects</a>
+                    </li>  
                 </ul>
             </div>
         </div>
