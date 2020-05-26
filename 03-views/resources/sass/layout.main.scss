@@ -1,0 +1,42 @@
+
+.nav-item-active {
+    @apply px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900;
+}
+
+.nav-item-active:focus {
+    @apply outline-none text-white bg-gray-700;
+}
+
+.nav-item {
+    @apply ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-100;
+}
+
+.nav-item:hover {
+    @apply text-white bg-gray-700;
+}
+
+.nav-item:focus {
+    @apply outline-none text-white bg-gray-700;
+}
+
+
+// For smaller screens
+.nav-item-min-active {
+    @apply block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900;
+}
+
+.nav-item-min-active:focus {
+    @apply outline-none text-white bg-gray-700;
+}
+
+.nav-item-min {
+    @apply mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-100;
+}
+.nav-item-min:hover {
+    @apply text-white bg-gray-700;
+}
+.nav-item-min:focus {
+    @apply outline-none text-white bg-gray-700;
+}
+
+ 

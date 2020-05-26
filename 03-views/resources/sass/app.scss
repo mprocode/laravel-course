@@ -1,8 +1,10 @@
 //
-@import "../css/layout.main.css";
+//@import "../css/layout.main.css";
 
 @tailwind base;
 
 @tailwind components;
+
+@import "./layout.main.scss";
 
 @tailwind utilities;

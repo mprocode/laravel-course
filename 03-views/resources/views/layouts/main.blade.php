@@ -34,9 +34,12 @@
             <div class="ml-10 flex items-baseline">
 
             {{-- customize --}}
-              <a href="{{route('home')}}" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Home</a>
-              <a href="{{route('projects')}}" class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Projects</a>
-              <a href="{{route('members')}}" class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Team Members</a>
+              <a href="{{route('home')}}" 
+                 class="{{ request()->routeIs('home') ? 'nav-item-active' : 'nav-item' }}">Home</a>
+              <a href="{{route('projects')}}" 
+                 class="{{ request()->routeIs('projects') ? 'nav-item-active' : 'nav-item' }}">Projects</a>
+              <a href="{{route('members')}}" 
+                 class="{{ request()->routeIs('members') ? 'nav-item-active' : 'nav-item' }}">Team Members</a>
             {{-- customize --}}
 
             </div>
@@ -87,9 +90,12 @@
       <div class="px-2 pt-2 pb-3 sm:px-3">
 
         {{-- customize --}}
-        <a href="{{route('home')}}"  class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Home</a>
-        <a href="{{route('projects')}}"  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-100 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Team</a>
-        <a href="{{route('members')}}"  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-100 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Projects</a>
+        <a href="{{route('home')}}"  
+           class="{{ request()->routeIs('home') ? 'nav-item-min-active' : 'nav-item-min' }}">Home</a>
+        <a href="{{route('projects')}}"  
+           class="{{ request()->routeIs('projects') ? 'nav-item-min-active' : 'nav-item-min' }}">Projects</a>
+        <a href="{{route('members')}}"  
+           class="{{ request()->routeIs('members') ? 'nav-item-min-active' : 'nav-item-min' }}">Team</a>
         {{-- customize --}}
 
       </div>
