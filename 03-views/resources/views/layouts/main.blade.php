@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+  @stack('styles')
+  @stack('scripts')
+
 </head>
 <body>
     <div class="row">

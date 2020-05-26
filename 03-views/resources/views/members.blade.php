@@ -8,6 +8,8 @@
 <h1>Members</h1>
 <hr>
 
+@push('styles')
+
 <style>
 .table-title {
     text-align: center;
@@ -27,6 +29,8 @@
     border-radius: 50%;
 }
 </style>
+
+@endpush
 
 <table>
     <thead>

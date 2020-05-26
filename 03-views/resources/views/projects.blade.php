@@ -8,6 +8,8 @@
 <h1>Projects</h1>
 <hr>
 
+@push('styles')
+
 <style>
 .shadow {
     box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
@@ -63,6 +65,8 @@
     text-align:center
 }
 </style>
+
+@endpush
 
 <div class="card-container">
 
