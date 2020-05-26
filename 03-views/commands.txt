@@ -1,0 +1,3 @@
+# Compiling Assets (laravel mix)
+npm install
+npm run dev
