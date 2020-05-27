@@ -28,3 +28,8 @@ webpack.mix.js
 
 npm install
 npm run dev
+
+
+# Creating a custom component
+php artisan make:component ProjectCard
+
