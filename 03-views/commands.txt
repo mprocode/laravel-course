@@ -36,3 +36,6 @@ php artisan make:component ProjectCard
 # Creating the table component and the member table row
 php artisan make:component Table
 php artisan make:component TableRowMember
+
+# Creating the ChardCard component
+php artisan make:component ChartCard
